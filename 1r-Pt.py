@@ -7,9 +7,4 @@ def ngu (a):
 
 ngu(4)
 
-import turtle
-bob = turtle.Turtle()
-bob.fd(100)
-bob.lt(200)
-bob.fd(200)
-turtle.mainloop()
+
