@@ -1,0 +1,13 @@
+A DEADLINE PROGRAM INCLUS
+    Title, Subject
+    Level, Date due
+
+    User can:
+
+    View all record
+    Search an entry
+    Add an entry
+    Update entry
+    Delete 
+    Close record
+
