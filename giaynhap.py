@@ -1,4 +1,4 @@
-a = 1
+a = True
 
-if not a:
-	print(a)
+if a:
+	print('ngu')

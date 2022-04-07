@@ -3,6 +3,7 @@ class Noeud:
         self.left=None
         self.right=None
         self.val = key
+        self.donitz = 1
 
 def accroche(pere,fils):
     if(pere.val > fils.val):
@@ -26,16 +27,24 @@ def insererDeTableau(tree,list):
     for m in list:
         insererArbre(tree,Noeud(m))
 
-def parcour(tree):
+def afficheUtil(val,space):
+    for i in range(space):
+        print("---",end=' ')
+        #
+    print(f"{val}")
+
+def afficher(tree,space):
     if not tree:
         return
+    space+=1
+    afficher(tree.left,space)
+    afficheUtil(tree.val,space)
+    afficher(tree.right,space)
 
-    parcour(tree.right)
-    print(tree.val,end=',')
-    parcour(tree.left)
+
 
 if __name__== '__main__':
     tableau = [9,1,2,55,66,2,3]
     root = Noeud(5)
     insererDeTableau(root,tableau)
-    parcour(root)
+    afficher(root,-1)
