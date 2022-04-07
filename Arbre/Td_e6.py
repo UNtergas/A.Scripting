@@ -21,7 +21,7 @@ def afficheUtil(val,space):
         #
     print(f"{val}")
 
-def afficher(tree,space):
+def afficher(tree,space=-1):
     if not tree:
         return
     space+=1
