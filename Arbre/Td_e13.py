@@ -1,16 +1,10 @@
-
-from re import S
 from Td_e6 import noeud
 import Td_e6 as e6
 
-class AVLnoeud():
-    #def __init__(self,cle):
-     #   super().__init__(cle)
+class AVLnoeud(noeud):
     def __init__(self,cle):
-        self.fgau=None
-        self.fdro=None
-        self.cle=cle
-        self.taille=1
+       super().__init__(cle)
+       self.taille=1
 
 def getHeight(tree):
     if not tree:
