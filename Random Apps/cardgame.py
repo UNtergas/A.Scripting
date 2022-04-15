@@ -1,5 +1,4 @@
 import random
-from winreg import DeleteKey
 
 class Card:
     def __init__(self,suit,rank):
@@ -56,9 +55,13 @@ class Deck:
         #
 
 class Hand(Deck):
-    def __init__(self,label=''):
+    def __init__(self,spot,label=''):
         self.cards=[]
         self.label=label
+        self.spot=0
+    
+    def handprint(self,i):
+        return str(self.cards[i])
     #
 def find_origin_class(obj,name):
     for ty in type(obj).mro():
@@ -71,9 +74,8 @@ if __name__ == '__main__':
     print(card1)
     print(card1<card2)
     deck=Deck()
-    #deck.sufflecard()
-    #print(deck)
-    hand1=Hand('player1')
-    deck.move_card(hand1,2)
-    print(hand1)
-    print(find_origin_class(hand1,'addcard'))
+    hand1=Hand('player')
+    hand2=Hand('dealer')
+    hand1.addcard(deck.dealcard())
+    hand1.addcard(deck.dealcard())
+    print(hand1.handprint(0))
